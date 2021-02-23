@@ -1,0 +1,22 @@
+\documentclass{report}
+
+\usepackage{tikz}
+\usetikzlibrary{quantikz}
+
+\usetikzlibrary{external}
+\tikzset{external/system call={latex \tikzexternalcheckshellescape -halt-on-error
+-interaction=batchmode -jobname "\image" "\texsource";
+dvips -o "\image".ps "\image".dvi;
+ps2eps "\image.ps"}}
+\tikzexternalize
+
+\begin{document}
+
+\begin{quantikz}[row sep=0.2cm,column sep=0.3cm]
+\lstick{$\,q_0 \,:\, \ket{1}$} & \gate{R_y(\theta_1)} & \qw         & \ctrl{1} & \qw        & \gate{R_y(\theta_2)}  & \meter{I,X,Y,Z} \\
+\lstick{$\,q_1 \,:\, \ket{0}$} & \gate{R_y(\theta_2)} & \gate{H} & \targ{}  & \gate{H} & \gate{R_y(\theta_4)}  & \meter{I,X,Y,Z} \\
+\end{quantikz}
+
+\end{document}
+
+
