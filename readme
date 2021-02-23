@@ -1,0 +1,21 @@
+Sample codes for calculating excited states of PSPCz molecule using qEOM and VQD methods on QASM simulator.
+
+Step 1. 
+     go to directory of "gen-input" 
+     run PSPCz-gen-input.py to obtain three output files: PSPCz.hamiltonian  PSPCz.wpOp  h.csv. These three files will be used for qEOM and VQD calculations 
+
+Step 2.1 
+     go to directory of "eom"; 
+     copy files of "PSPCz.hamiltonian" and "PSPCz.wpOp" from "../gen-input"
+     run PSPCz-eom.py to obtain the excited states results from qEOM method.
+     
+      
+Step 2.2 
+     go to directory of "vqd"; 
+     copy files of "h.csv" from "../gen-input"
+     run PSPCz-VQD.py to obtain the excited states results from VQD method.
+
+Step 3     
+     go to directory of "purification"; 
+     copy files of "h.csv" from "../gen-input"
+     run PSPCz-purify.py to correct energy and Ansatz parameters results from VQE or VQD methods.
